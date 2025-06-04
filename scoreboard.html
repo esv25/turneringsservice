@@ -2042,7 +2042,7 @@ let penaltyState = {
 
 function markPenalty(team, idx, scored) {
   // Oppdater state
-  window.penaltyResults[team][idx] = scored;
+  penaltyState.results[team][idx] = scored;
   // Vis feedback på raden: f.eks. farge knapp eller tekst
   // Finn raden i DOM:
   const row = document.querySelectorAll('.penalty-row')[idx];
@@ -2056,27 +2056,6 @@ function markPenalty(team, idx, scored) {
   btns[0].classList.add('selected');
 }
 
-document.getElementById('confirmPenaltyResults').onclick = () => {
-  const { home, away, rounds } = window.penaltyResults;
-  const homeScore = home.filter(x => x).length;
-  const awayScore = away.filter(x => x).length;
-
-  // Vis totalen et sted i UI
-  alert(`Resultat:\n${homeScore} – ${awayScore}`);
-
-  // Oppdater Firestore
-  db.collection('turneringer').doc(turneringId)
-    .collection('kamper').doc(kampId)
-    .update({
-      tieBreakType: 'penalties',
-      homePenaltyScore: homeScore,
-      awayPenaltyScore: awayScore,
-      penaltyDetails: window.penaltyResults
-    });
-
-  closePenaltyModal();
-  avsluttKamp();
-};
 
 function closePenaltyModal() {
   document.getElementById('penaltyModal').style.display = 'none';
