@@ -1,140 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Scores – Score Service | Choose Your Page</title>
-  <meta name="description" content="Discover Simple Scores, your trusted source for live sports scores and updates. Choose your page to access the public or admin section.">
+  <title>Simple Scores – Komplett Resultatservice</title>
+  <meta name="description" content="Med Simple Scores kan du enkelt administrere turneringer og dele live resultater. Registrer lag, planlegg kamper og vis score i sanntid.">
+  <meta name="keywords" content="resultatservice, live score, turnering, scoreboard, sport">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://dinsideeksempel.no/">
-  <link rel="stylesheet" href="./admin.css">
   <link rel="stylesheet" href="./style.css">
-  <!-- Open Graph meta tags -->
-  <meta property="og:title" content="Simple Scores – Score Service">
-  <meta property="og:description" content="Discover Simple Scores, your trusted source for live sports scores and updates.">
+  <link rel="stylesheet" href="./admin.css">
+  <meta property="og:title" content="Simple Scores – Komplett Resultatservice">
+  <meta property="og:description" content="Administrer turneringer og følg kampene direkte med Simple Scores.">
   <meta property="og:image" content="logo.png">
   <meta property="og:url" content="https://dinsideeksempel.no/">
   <meta property="og:type" content="website">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://dinsideeksempel.no/",
+    "@type": "WebPage",
     "name": "Simple Scores",
-    "description": "Discover Simple Scores, your trusted source for live sports scores and updates."
+    "description": "Med Simple Scores kan du enkelt administrere turneringer og følge kamper i sanntid.",
+    "url": "https://dinsideeksempel.no/"
   }
   </script>
   <style>
     body {
       font-family: var(--font-main);
-      background-color: var(--color-dark);
-      color: var(--color-background);
       margin: 0;
       padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      background-color: var(--color-background);
+      color: var(--color-text);
+      line-height: 1.6;
     }
-    .container {
-      display: flex;
-      width: 80%;
-      max-width: 1200px;
+    header.hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #4c51bf, #68d391);
+      color: #fff;
+    }
+    header.hero img {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+    header.hero .cta {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 12px 24px;
       background-color: #2d3748;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
     }
-    .logo-section {
-      flex: 1;
+    main {
+      padding: 40px 20px;
+    }
+    .features {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
-      background: linear-gradient(135deg, #3b3f73, #2f8656);
+      gap: 20px;
+    }
+    .feature {
+      background: #fff;
+      color: #2d3e50;
+      border-radius: 8px;
       padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
     }
-    .logo-section img {
-      max-width: 80%;
-      max-height: 80%;
-      filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
-    }
-    .choice-section {
-      flex: 1;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .choice-section h1 {
+    .cta-section {
       text-align: center;
-      margin-bottom: 20px;
-      color: var(--color-background);
+      padding: 40px 20px;
+      background-color: #1a202c;
+      color: #fff;
     }
-    .choice-section p {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #cbd5e0;
-    }
-    .choice-section button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
+    .cta-section .cta {
       background-color: var(--color-accent);
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      color: #1a202c;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
     }
-    .choice-section button:hover {
-      background-color: #48bb78;
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2d3748;
+      color: #fff;
     }
     @media (max-width: 768px) {
-      .container {
+      .features {
         flex-direction: column;
-        width: 90%;
-      }
-      .logo-section {
-        border-top-left-radius: 12px;
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 12px;
-        padding: 40px 20px;
-      }
-      .logo-section img {
-        max-width: 100%;
-        height: auto;
-        max-height: 150px;
-        object-fit: contain;
-      }
-      .choice-section {
-        padding: 20px;
-      }
-      .choice-section h1 {
-        font-size: 24px;
-        margin-bottom: 16px;
-      }
-      .choice-section button {
-        padding: 10px;
-        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <!-- Logo Section -->
-    <section class="logo-section">
-      <img src="logo.png" alt="Simple Scores Logo">
+  <header class="hero">
+    <img src="logo.png" alt="Simple Scores logo">
+    <h1>Velkommen til Simple Scores</h1>
+    <p>Det komplette verktøyet for turneringsadministrasjon og live resultater.</p>
+    <a href="nyTurnering.html" class="cta">Kom i gang</a>
+  </header>
+  <main>
+    <section class="features">
+      <div class="feature">
+        <h2>Live Scoreboard</h2>
+        <p>Følg kampene direkte med vårt intuitive scoreboard.</p>
+      </div>
+      <div class="feature">
+        <h2>Enkel turneringsadministrasjon</h2>
+        <p>Opprett turneringer, legg til lag og sett opp kamper på få minutter.</p>
+      </div>
+      <div class="feature">
+        <h2>Registrering og påmelding</h2>
+        <p>La lag og dommere registrere seg via enkle nettskjema.</p>
+      </div>
     </section>
-
-    <!-- Choice Section -->
-    <section class="choice-section">
-      <h1>Choose Your Page</h1>
-      <p>Welcome to Simple Scores, your trusted source for live sports scores and updates. Choose your page to continue.</p>
-      <button onclick="window.location.href='publikum.html'">Go to Public Page</button>
-      <button onclick="window.location.href='login.html'">Go to Admin Page</button>
-      <button onclick="window.location.href='basicscore.html'">Go to Basic Scoreboard</button>
+    <section class="cta-section">
+      <h2>Prøv Simple Scores i dag</h2>
+      <a href="registrer.html" class="cta">Registrer deg</a>
     </section>
   </main>
+  <footer>
+    <p>&copy; 2024 Simple Scores. Alle rettigheter reservert.</p>
+  </footer>
 </body>
 </html>
