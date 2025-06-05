@@ -1,3 +1,14 @@
+/* CSS Variables for global theme */
+:root {
+    --font-main: 'Poppins', sans-serif;
+    --color-background: #f0f2f5;
+    --color-text: #2d3e50;
+    --color-primary: #4c51bf;
+    --color-primary-hover: #434190;
+    --color-accent: #68d391;
+    --color-dark: #1a202c;
+}
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -7,9 +18,9 @@
 
 /* Body */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
-    color: #2d3e50;
+    font-family: var(--font-main);
+    background-color: var(--color-background);
+    color: var(--color-text);
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -31,7 +42,7 @@ header {
 
 /* Juster knappens stil */
 .user-button {
-    background-color: #4c51bf;
+    background-color: var(--color-primary);
     color: white;
     padding: 8px 16px;
     border: none;
@@ -45,7 +56,7 @@ header {
 }
 
 .user-button:hover {
-    background-color: #434190;
+    background-color: var(--color-primary-hover);
 }
 .user-menu {
     display: none; /* Skjult som standard */
@@ -65,7 +76,7 @@ header {
 }
 
 .user-menu button {
-    background-color: #4c51bf;
+    background-color: var(--color-primary);
     color: white;
     padding: 8px 16px;
     border: none;
@@ -215,7 +226,7 @@ main {
 
 /* Button Styling */
 button {
-    background-color: #4c51bf;
+    background-color: var(--color-primary);
     color: white;
     padding: 12px 24px;
     border: none;
@@ -227,7 +238,7 @@ button {
 }
 
 button:hover {
-    background-color: #434190;
+    background-color: var(--color-primary-hover);
     transform: scale(1.05);
 }
 
@@ -257,7 +268,7 @@ select {
 
 select:focus {
     outline: none;
-    border-color: #4c51bf;
+    border-color: var(--color-primary);
     box-shadow: 0 0 5px rgba(76, 81, 191, 0.5);
 }
 
@@ -422,7 +433,7 @@ label {
 }
 
 .button-container button {
-    background-color: #4c51bf;
+    background-color: var(--color-primary);
     color: white;
     padding: 10px 25px;
     flex: 1;
@@ -434,7 +445,7 @@ label {
 }
 
 .button-container button:hover {
-    background-color: #434190;
+    background-color: var(--color-primary-hover);
     transform: scale(1.05);
 }
 
@@ -476,7 +487,7 @@ table td {
 }
 
 table td button {
-    background-color: #4c51bf;
+    background-color: var(--color-primary);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -487,7 +498,7 @@ table td button {
 }
 
 table td button:hover {
-    background-color: #434190;
+    background-color: var(--color-primary-hover);
     transform: scale(1.05);
 }
 
@@ -584,7 +595,7 @@ table td button:hover {
 
 /* Button styling inside the sidebar */
 .sidebar button {
-    background-color: #4c51bf;
+    background-color: var(--color-primary);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -597,7 +608,7 @@ table td button:hover {
 }
 
 .sidebar button:hover {
-    background-color: #434190;
+    background-color: var(--color-primary-hover);
     transform: scale(1.05);
 }
 
@@ -821,13 +832,13 @@ table td button:hover {
   }
   
   .site-footer a {
-    color: #4c51bf;
+    color: var(--color-primary);
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
   .site-footer a:hover {
-    color: #434190;
+    color: var(--color-primary-hover);
   }
   
   .site-footer p {
